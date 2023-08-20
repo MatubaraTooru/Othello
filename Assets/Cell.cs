@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private bool _isBlack = false;
+
+    public bool IsBlack 
+    { 
+        get => _isBlack; 
+        set
+        {
+            _isBlack = value;
+            _animator.SetBool("IsBlack", _isBlack);
+        }
+
+    }
+    private Animator _animator;
     void Start()
     {
-        
+        _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
