@@ -7,20 +7,10 @@ public class Cell : MonoBehaviour
     [SerializeField]
     private bool _isBlack = false;
 
-    public bool IsBlack 
-    { 
-        get => _isBlack; 
-        set
-        {
-            _isBlack = value;
-            _animator.SetBool("IsBlack", _isBlack);
-        }
-
-    }
-    private Animator _animator;
+    public bool IsBlack { get => _isBlack; set => _isBlack = !_isBlack; }
     void Start()
     {
-        _animator = GetComponent<Animator>();
+        
     }
 
     void Update()
