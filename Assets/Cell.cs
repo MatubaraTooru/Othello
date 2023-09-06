@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    [SerializeField]
-    private bool _isBlack = false;
-
-    public bool IsBlack { get => _isBlack; set => _isBlack = !_isBlack; }
+    private StoneColor _color = StoneColor.None;
+    public StoneColor Color { get => _color; set => _color = value; }
+    
     void Start()
     {
         
@@ -16,5 +15,10 @@ public class Cell : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Reverse()
+    {
+
     }
 }
